@@ -26,6 +26,7 @@
     // const goodFriends = (friend1 : string, friend2: string, friend3: string, ) => {
     //     console.log(`My best friends are ${friend1}, ${friend2}, and ${friend3}`);
     // }
+    // learning rest operator
     const goodFriends = (...friends) => {
         // console.log(`My best friends are ${friends}`);
         friends.forEach((friend) => {

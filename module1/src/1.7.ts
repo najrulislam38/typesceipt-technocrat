@@ -44,6 +44,9 @@ const nationalPlayerList = {...nationalPlayer1, ...nationalPlayer2 }; // spread 
 //     console.log(`My best friends are ${friend1}, ${friend2}, and ${friend3}`);
 // }
 
+
+// learning rest operator
+
 const goodFriends = (...friends : string[]) => {
     // console.log(`My best friends are ${friends}`);
     
