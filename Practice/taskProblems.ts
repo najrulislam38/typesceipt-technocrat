@@ -339,6 +339,25 @@ function handleError(message: string): never {
 
 // handleError("Error hoye gese bhai");
 
+/* 13: Generics with Functions and Interfaces
+Objective: Use generics to handle different types.
+
+Instructions:
+
+Create a generic function that:
+Accepts an array of any type.
+Returns a new array with duplicate values removed.
+
+*/
+
+function removeDuplicates<T>(arr: T[]): T[] {
+  return [...new Set(arr)];
+}
+
+const numbers = [1, 2, 2, 3, 4, 4, 5];
+const uniqueNumbers = removeDuplicates(numbers);
+// console.log(uniqueNumbers);
+
 /*
 14: Asynchronous TypeScript and Type Aliases
 Objective: Simulate an asynchronous operation with TypeScript.
@@ -364,5 +383,63 @@ async function fetchUserData(): Promise<UserData> {
 }
 
 fetchUserData().then((data) => {
-  console.log("UserData: ", data);
+  // console.log("UserData: ", data);
 });
+
+/*15: Type Guards
+Objective: Create custom type guards for more accurate type checking.
+
+Instructions:
+
+Write a function isString(value: unknown): value is string that checks if a value is a string.
+Use this in another function printUpperCase(value: unknown): void that prints the value in uppercase if it’s a string.
+ */
+
+function isString(value: unknown): value is string {
+  return typeof value === "string";
+}
+
+function printUpperCase(value: unknown): void {
+  if (isString(value)) {
+    console.log(value.toUpperCase());
+  }
+}
+
+// printUpperCase("100");
+
+/* 16. Utility Types and Keyof Constraints
+Objective: Access object properties dynamically using keyof.
+
+Instructions:
+
+Create a function that:
+Takes an object and a key.
+Returns the property value from the object based on the provided key.
+Use keyof to constrain the key to valid properties of the object.
+
+ */
+
+{
+  function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
+    return obj[key];
+  }
+
+  interface Person {
+    name: string;
+    age: number;
+    email?: string;
+  }
+
+  const person: Person = {
+    name: "Alice",
+    age: 30,
+    email: "alice@example.com",
+  };
+
+  // Valid uses:
+  const name = getProperty(person, "name"); // string
+  const age = getProperty(person, "age"); // number
+  const email = getProperty(person, "email"); // string | undefined
+
+  // console.log(name, age, email);
+}
