@@ -86,11 +86,11 @@ let message = "Hello"; // inferred as string
 
 ## 6. How does TypeScript help in improving code quality and project maintainability?
 
-- **Static type checking** reduces runtime errors
-- **Better tooling**: Autocompletion, refactoring, and navigation
-- **Self-documenting code**: Types describe expected structures
-- **Easier refactoring**: Types prevent unintended changes
-- **Improved team collaboration**: Code becomes more predictable
+- **Static type checking** reduces runtime errors.
+- **Better tooling**: Autocompletion, refactoring, and navigation.
+- **Self-documenting code**: Types describe expected structures.
+- **Easier refactoring**: Types prevent unintended changes.
+- **Improved team collaboration**: Code becomes more predictable.
 
 ## 7. Provide an example of using union and intersection types in TypeScript.
 
