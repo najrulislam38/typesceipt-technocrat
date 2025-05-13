@@ -8,9 +8,9 @@ function formatString(input: string, toUpper?: boolean): string {
   }
 }
 
-// formatString("Bangladesh");
-// formatString("Bangladesh", true);
-// formatString("Bangladesh", false);
+formatString("Bangladesh");
+formatString("Bangladesh", true);
+formatString("Bangladesh", false);
 
 function filterByRating(
   items: { title: string; rating: number }[]
